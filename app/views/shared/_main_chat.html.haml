@@ -1,0 +1,26 @@
+.main
+  .main-header
+    .main-header-left
+      .group-name
+        グループ名
+      .member-list
+        メンバー
+    .main-header-right  
+      = link_to "Edit", "#", class: "main-header-btn"
+  .messages
+    .message
+      .message-info
+        .message-name
+          名前
+        .message-time
+          2020-0502
+      .message-text
+        しんどい
+  .form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box-text", placeholder:  "type a message"}
+        %label{class: "input-image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box-image-file"}
+      %input{type: "submit", class: "submit-btn"}
