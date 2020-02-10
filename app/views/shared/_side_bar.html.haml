@@ -1,11 +1,12 @@
 .left
   .left-header
     .header-items
-      .header-items-name 名前
+      .header-items-name
+        = current_user.name
       .header-items-btn
         = link_to "#", class: "header-items-btn-edit" do
           = icon('fas', 'edit')
-        = link_to "#", class: "header-items-btn-user-edit" do
+        = link_to edit_user_path(current_user), class: "header-items-btn-user-edit" do
           = icon('fas', 'user-edit')
   .group-list
     .list
