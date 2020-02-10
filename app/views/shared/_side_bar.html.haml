@@ -1,0 +1,15 @@
+.left
+  .left-header
+    .header-items
+      .header-items-name 名前
+      .header-items-btn
+        = link_to "#", class: "header-items-btn-edit" do
+          = icon('fas', 'edit')
+        = link_to "#", class: "header-items-btn-user-edit" do
+          = icon('fas', 'user-edit')
+  .group-list
+    .list
+      .list-name
+        グループ名
+      .list-messages
+        メッセージ
