@@ -4,13 +4,17 @@
       .header-items-name
         = current_user.name
       .header-items-btn
-        = link_to "#", class: "header-items-btn-edit" do
+        = link_to new_group_path, class: "header-items-btn-edit" do
           = icon('fas', 'edit')
         = link_to edit_user_path(current_user), class: "header-items-btn-user-edit" do
           = icon('fas', 'user-edit')
   .group-list
-    .list
-      .list-name
-        グループ名
-      .list-messages
-        メッセージ
+    - current_user.groups.each do |group|
+      .list
+        = link_to "#" do
+          .list-name
+            = group.name
+          .list-messages
+            メッセージ
+
+  
