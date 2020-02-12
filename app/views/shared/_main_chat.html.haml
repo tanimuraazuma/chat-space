@@ -2,25 +2,25 @@
   .main-header
     .main-header-left
       .group-name
-        グループ名
+        = @group.name
       .member-list
-        メンバー
+        - @users.each do |user|
+          = user.name
     .main-header-right  
-      = link_to "Edit", "#", class: "main-header-btn"
+      = link_to "Edit", edit_group_path(@group), class: "main-header-btn"
   .messages
-    .message
-      .message-info
-        .message-name
-          名前
-        .message-time
-          2020-0502
-      .message-text
-        しんどい
+    = render @messages
   .form
-    %form.new-message
-      .input-box
-        %input{type: "text", class: "input-box-text", placeholder:  "type a message"}
-        %label{class: "input-image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box-image-file"}
-      %input{type: "submit", class: "submit-btn"}
+    = form_for [@group, @message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class: 'input-box-text', placeholder: 'type a message'
+          = f.label :image, class: "input-image" do
+            = icon("fas", "image")
+            = f.file_field :image, class: "input-box-image-file"
+        = f.submit "送信", class: "submit-btn"
+  
+
+  
+
+  
