@@ -1,10 +1,10 @@
 .message
   .message-info
-    .message-name
+    %p.message-name
       = message.user.name
-    .message-time
+    %p.message-time
       = message.created_at
-  .message-text
+  %p.message-text
     - if message.content.present?
       = message.content
-    = image_tag message.image.url, class: 'message_image' if message.image.present?
+  = image_tag message.image.url, class: 'message_image' if message.image.present?

@@ -142,22 +142,16 @@
 
   .messages {
     height: calc(100vh - 190px);
-    width: calc(100vw - 300px);
+    padding: 46px 40px;
     background-color: #fafafa;
-
+    overflow: scroll;
+ 
     .message {
-      height: 88px;
-      width: 50%;
-      margin-left: 40px;
-      position: relative;
-    
+      padding-bottom: 40px;
 
       .message-info {
-        height: 16px;
         display: flex;
-        position: absolute;
-        top: 35px;
-        left: 0;
+        margin-bottom: 10px;
 
         .message-name {
           font-size: 16px;
@@ -172,13 +166,12 @@
       }
 
       .message-text {
-        height: 14px;
         font-size: 14px;
-        position: absolute;
-        bottom: 11px;
         color: #434a54;
         
       }
+
+      
       
     }
   }
