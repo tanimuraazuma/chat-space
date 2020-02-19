@@ -5,7 +5,7 @@ $(function(){
         `<div class="message">
           <div class="message-info">
             <p class="message-name">
-              ${message.name}
+              ${message.user_name}
             </p>
             <p class="message-time">
               ${message.created_at}
@@ -22,7 +22,7 @@ $(function(){
         `<div class="message">
           <div class="message-info">
             <p class="message-name">
-              ${message.name}
+              ${message.user_name}
             </p>
             <p class="message-time">
               ${message.created_at}
@@ -36,17 +36,17 @@ $(function(){
     };
   }
   $('#new_message').on('submit', function(e){
-  e.preventDefault();
-  var formData = new FormData(this);
-  var url = $(this).attr('action')
-  $.ajax({
-    url: url,
-    type: "POST",
-    data: formData,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  })
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);  
@@ -56,6 +56,6 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
+    });
   })
 });
