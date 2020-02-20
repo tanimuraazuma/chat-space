@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-        `<div class="message data-message-id= message.id ">
+        `<div class="message" data-message-id= ${message.id}>
           <div class="message-info">
             <p class="message-name">
               ${message.user_name}
@@ -19,7 +19,7 @@ $(function(){
       return html;
     } else {
       var html =
-        `<div class="message data-message-id= message.id">
+        `<div class="message" data-message-id= ${message.id}>
           <div class="message-info">
             <p class="message-name">
               ${message.user_name}
@@ -78,10 +78,9 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
-  setInterval(reloadMessages, 7000);
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
