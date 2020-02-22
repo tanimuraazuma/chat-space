@@ -23,7 +23,7 @@ $(function() {
       <p class="chat-group-user__name">${name}</p>
       <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
     </div>`;
-    $(".js-add-user").append(html);
+    $("#chat-group-users").append(html);
   }
   function addMember(userId) {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
@@ -54,8 +54,8 @@ $(function() {
         alert("通信エラーです。ユーザーが表示できません。");
       });
   });
+  console.log("aaa");
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
