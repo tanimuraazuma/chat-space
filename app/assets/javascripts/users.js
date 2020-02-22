@@ -54,7 +54,6 @@ $(function() {
         alert("通信エラーです。ユーザーが表示できません。");
       });
   });
-  console.log("aaa");
   $(document).on("click", ".chat-group-user__btn--add", function() {
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
